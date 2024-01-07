@@ -18,7 +18,9 @@ df['Disorder Subclass'].replace('Unknown', np.nan, inplace=True)
 
 df.dropna(inplace=True)
 
-print('-DATASET COUNTS AFTER DROPPING TARGET UNKNOWNS-\n')
+df.info()
+
+print('-DATASET TARGET COLUMN COUNTS AFTER DROPPING TARGET UNKNOWNS-\n')
 print(df.iloc[:, -2].value_counts())
 print(df.iloc[:, -1].value_counts())
 
@@ -30,6 +32,8 @@ df.replace('Unknown', np.nan, inplace=True)
 
 df.dropna(inplace=True)
 
-print('-DATASET COUNTS AFTER DROPPING ALL UNKNOWNS-\n')
+df.info()
+
+print('-DATASET TARGET COLUMN COUNTS AFTER DROPPING ALL UNKNOWNS-\n')
 print(df.iloc[:, -2].value_counts())
 print(df.iloc[:, -1].value_counts())
