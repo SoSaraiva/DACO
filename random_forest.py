@@ -95,6 +95,21 @@ rf.fit(X_train, y_train)
 
 y_pred = rf.predict(X_test) 
 
+
+# First try on feature Importances
+feature_importances_cat = rf.feature_importances_
+print (feature_importances_cat)
+import matplotlib.pyplot as plt
+
+feature_names = X.columns 
+plt.barh(feature_names, feature_importances_cat)
+plt.xlabel('Feature Importance')
+plt.ylabel('Feature Name')
+plt.title('Random Forest Feature Importances')
+plt.show()
+
+
+
 print("\nMulti-layer classifier:\n")
 
 print(classification_report(y_test, y_pred, output_dict=True))
@@ -153,3 +168,6 @@ y_pred = rf.predict(X_test)
 print("\nLast Column:\n")
 
 print(classification_report(y_test, y_pred))
+
+
+
