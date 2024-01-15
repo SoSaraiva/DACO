@@ -3,6 +3,8 @@ import numpy as np
 
 df = pd.read_csv('dataset.csv')
 
+print('\n\n-------------------------ORIGINAL DATASET---------------------------\n')
+
 df.info()
 
 print('\n-DATASET TARGET COLUMN COUNTS BEFORE DROPPING UNKNOWNS-\n')
@@ -20,7 +22,7 @@ df.dropna(inplace=True)
 
 df.info()
 
-print('-DATASET TARGET COLUMN COUNTS AFTER DROPPING TARGET UNKNOWNS-\n')
+print('\n-DATASET TARGET COLUMN COUNTS AFTER DROPPING TARGET UNKNOWNS-\n')
 print(df.iloc[:, -2].value_counts())
 print(df.iloc[:, -1].value_counts())
 
@@ -34,6 +36,6 @@ df.dropna(inplace=True)
 
 df.info()
 
-print('-DATASET TARGET COLUMN COUNTS AFTER DROPPING ALL UNKNOWNS-\n')
+print('\n-DATASET TARGET COLUMN COUNTS AFTER DROPPING ALL UNKNOWNS-\n')
 print(df.iloc[:, -2].value_counts())
 print(df.iloc[:, -1].value_counts())
